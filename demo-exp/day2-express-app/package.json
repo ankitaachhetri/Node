@@ -1,0 +1,11 @@
+{
+  "name": "day-2-express-app",
+  "version": "1.0.0",
+  "description": "day-2-express-app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Ankita Chhetri",
+  "license": "ISC"
+}

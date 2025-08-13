@@ -2,7 +2,7 @@ const express = require('express');
 const app= express();
 app.get('/',(req,res)=>{
     console.log("Hello from express");
-    res.render(`<!DOCTYPE html>
+    res.send(`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
