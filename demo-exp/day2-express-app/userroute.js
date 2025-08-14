@@ -16,4 +16,14 @@ userrouter.get("/", (req, res) => {
     res.send(`User ID: ${userId}, Name: ${name}, Country: ${country}`);
 });
 
+userrouter.get("/try-catch", (req, res) => {
+
+try {
+    const data = fs.readFileSync(`${__dirname}/data.json`, "utf-8");
+    const jsonData = JSON.parse(data);
+    res.send(jsonData);
+} catch (error) {
+    res.status(500).send("Error reading data file");
+}
+});
 module.exports = userrouter;

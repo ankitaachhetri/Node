@@ -7,5 +7,8 @@
     "start": "nodemon app.js"
   },
   "author": "Ankita Chhetri",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.14.3"
+  }
 }
