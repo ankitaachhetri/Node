@@ -54,22 +54,41 @@
 // });
 
 const express = require('express');
+// const router = require('./router/college');
+const router = require('./router/student');
+// const router1= require('./router/student');
+// const mysql = require('mysql2');
 const app = express();
+app.use(express.json()); // Middleware to parse JSON bodies
 
 //mysql connection
-const mysql= require('mysql2');
-const connection= mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password:"roshAn_12#",
-    database: "ankita",
-    port: 3306,
-});
+// app.use('/college', router);
+app.use('/student', require('./router/student'));
+// const mysql= require('mysql2');
+// const connection= mysql.createConnection({
+//     host: "localhost",
+//     user: "root",
+//     password:"roshAn_12#",
+//     database: "ankita",
+//     port: 3306,
+// });
 
-connection.connect((err) => {
-    if (err) {
-        console.error('Error connecting to the database:', err);
-        return;
-    }
-    console.log('Connected to the MySQL database');
+// connection.connect((err) => {
+//     if (err) {
+//         console.error('(❌)Error connecting to the database:', err);
+//         return;
+//     }
+//     console.log('(🚀)Connected to the MySQL database');
+// });
+
+// connection.query('SELECT * FROM Colleges', (err, results) => {
+//     if (err) {
+//         console.error('(❌))Error executing query to colleges:', err);
+//         return;
+//     }
+//     console.log('(🚀)Colleges Data:', results);
+// });
+
+app.listen(3000, () => {
+    console.log("Server is running on port 3000");
 });
